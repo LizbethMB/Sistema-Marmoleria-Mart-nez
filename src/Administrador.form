@@ -134,68 +134,6 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Container class="javax.swing.JPanel" name="jPanel11">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="0" red="0" type="rgb"/>
-                </Property>
-              </Properties>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="500" y="600" width="240" height="40"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txtusu" pref="81" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtusu" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel19">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Calibri" size="14" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Usuario en conecxi&#xf3;n"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtusu">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtusuActionPerformed"/>
-                  </Events>
-                </Component>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -264,13 +202,13 @@
                               <Group type="102" attributes="0">
                                   <Component id="lblDomicilio4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                                  <Component id="jTextField9" min="-2" pref="122" max="-2" attributes="0"/>
+                                  <Component id="txtTelefonoEmpleados" min="-2" pref="122" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                           <Component id="lblDomicilio5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                          <Component id="jTextField11" min="-2" pref="121" max="-2" attributes="0"/>
+                          <Component id="txtMovilEmpleados" min="-2" pref="121" max="-2" attributes="0"/>
                           <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                           <Component id="jSeparator4" min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -280,13 +218,13 @@
                                       <Component id="lblDomicilio6" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                          <Component id="jTextField5" min="-2" pref="92" max="-2" attributes="0"/>
+                                          <Component id="txtSalarioEmpleados" min="-2" pref="92" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="btnAddUser1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAddEmpleados" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -297,15 +235,15 @@
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                   <Component id="lblNombre1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                                  <Component id="jTextField2" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="txtNombreEmpleado" min="-2" pref="150" max="-2" attributes="0"/>
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                   <Component id="lblNombre2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                                  <Component id="jTextField4" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="txtApellidosEmpleado" min="-2" pref="150" max="-2" attributes="0"/>
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                                   <Component id="lblTipo1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cmbCargoEmpleado" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jSeparator1" min="-2" pref="588" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
@@ -316,15 +254,15 @@
                                   <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                                   <Component id="lblTelefono" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                  <Component id="jTextField8" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="txtCalleEmpleado" min="-2" pref="150" max="-2" attributes="0"/>
                                   <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                                   <Component id="lblTelefono2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Component id="jTextField7" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="txtColoniaEmpleado" min="-2" pref="150" max="-2" attributes="0"/>
                                   <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                                   <Component id="lblTelefono3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                  <Component id="jTextField10" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <Component id="txtNumEmpleados" min="-2" pref="61" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jSeparator2" min="-2" pref="588" max="-2" attributes="0"/>
                           </Group>
@@ -338,19 +276,19 @@
                           <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblNombre1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField2" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="txtNombreEmpleado" min="-2" pref="28" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                                   <Component id="lblNombre2" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jTextField4" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="txtApellidosEmpleado" min="-2" pref="28" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                                   <Component id="lblTipo1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cmbCargoEmpleado" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
@@ -360,11 +298,11 @@
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblTelefono" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField8" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="txtCalleEmpleado" min="-2" pref="28" max="-2" attributes="0"/>
                               <Component id="lblTelefono2" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField7" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="txtColoniaEmpleado" min="-2" pref="28" max="-2" attributes="0"/>
                               <Component id="lblTelefono3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField10" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="txtNumEmpleados" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -377,7 +315,7 @@
                                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                                           <Component id="lblDomicilio4" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jTextField9" min="-2" pref="28" max="-2" attributes="0"/>
+                                      <Component id="txtTelefonoEmpleados" min="-2" pref="28" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" attributes="0">
@@ -386,7 +324,7 @@
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
-                                  <Component id="jTextField11" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="txtMovilEmpleados" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jSeparator4" min="-2" pref="128" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
@@ -395,12 +333,12 @@
                                           <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
                                           <Component id="lblDomicilio6" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
-                                          <Component id="jTextField5" min="-2" pref="28" max="-2" attributes="0"/>
+                                          <Component id="txtSalarioEmpleados" min="-2" pref="28" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jSeparator2" alignment="0" min="-2" pref="10" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="btnAddUser1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAddEmpleados" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -478,11 +416,11 @@
                     <Property name="text" type="java.lang.String" value="Apellidos"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField2">
+                <Component class="javax.swing.JTextField" name="txtNombreEmpleado">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField4">
+                <Component class="javax.swing.JTextField" name="txtApellidosEmpleado">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField5">
+                <Component class="javax.swing.JTextField" name="txtSalarioEmpleados">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="$"/>
                   </Properties>
@@ -503,7 +441,7 @@
                     <Property name="text" type="java.lang.String" value="Colonia"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField7">
+                <Component class="javax.swing.JTextField" name="txtColoniaEmpleado">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblTelefono3">
                   <Properties>
@@ -521,7 +459,7 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator2">
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                <Component class="javax.swing.JComboBox" name="cmbCargoEmpleado">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -553,7 +491,7 @@
                     <Property name="text" type="java.lang.String" value="Domicilio"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField8">
+                <Component class="javax.swing.JTextField" name="txtCalleEmpleado">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblDomicilio4">
                   <Properties>
@@ -569,7 +507,7 @@
                     <Property name="text" type="java.lang.String" value="Tel.Casa"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField9">
+                <Component class="javax.swing.JTextField" name="txtTelefonoEmpleados">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblDomicilio5">
                   <Properties>
@@ -599,11 +537,11 @@
                     <Property name="text" type="java.lang.String" value="Salario"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField10">
+                <Component class="javax.swing.JTextField" name="txtNumEmpleados">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField11">
+                <Component class="javax.swing.JTextField" name="txtMovilEmpleados">
                 </Component>
-                <Component class="javax.swing.JButton" name="btnAddUser1">
+                <Component class="javax.swing.JButton" name="btnAddEmpleados">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="24" style="1"/>
@@ -639,7 +577,7 @@
                     <Property name="verticalTextPosition" type="int" value="3"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddUser1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddEmpleadosActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator4">
@@ -673,7 +611,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="TablaEmpleados">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="66" green="0" red="0" type="rgb"/>

@@ -19,14 +19,17 @@ public class Administrador extends javax.swing.JFrame {
      * Creates new form Administrador
      */
     ConsultasUsuarios cu;
-    
+    ConsultasEmpleados ce;
     public Administrador() {
         initComponents();
         
         //Consultas Usuarios
         cu= new ConsultasUsuarios();
+        ce= new ConsultasEmpleados();
             ConsultasUsuarios con= new ConsultasUsuarios();
-        con.MostrarTabla(tablaUsuarios);
+            con.MostrarTabla(tablaUsuarios);
+            ConsultasEmpleados cone= new ConsultasEmpleados();
+            cone.MostrarTablaEmpleados(TablaEmpleados);
     }
 
     /**
@@ -45,9 +48,6 @@ public class Administrador extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        txtusu = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -56,28 +56,28 @@ public class Administrador extends javax.swing.JFrame {
         lblDomicilio1 = new javax.swing.JLabel();
         lblTelefono = new javax.swing.JLabel();
         lblNombre2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtNombreEmpleado = new javax.swing.JTextField();
+        txtApellidosEmpleado = new javax.swing.JTextField();
+        txtSalarioEmpleados = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         lblTelefono2 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txtColoniaEmpleado = new javax.swing.JTextField();
         lblTelefono3 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbCargoEmpleado = new javax.swing.JComboBox<>();
         lblDomicilio3 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtCalleEmpleado = new javax.swing.JTextField();
         lblDomicilio4 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        txtTelefonoEmpleados = new javax.swing.JTextField();
         lblDomicilio5 = new javax.swing.JLabel();
         lblDomicilio6 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        btnAddUser1 = new javax.swing.JButton();
+        txtNumEmpleados = new javax.swing.JTextField();
+        txtMovilEmpleados = new javax.swing.JTextField();
+        btnAddEmpleados = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablaEmpleados = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -175,44 +175,6 @@ public class Administrador extends javax.swing.JFrame {
         jPanel5.add(jLabel8);
         jLabel8.setBounds(-20, 0, 280, 77);
 
-        jPanel11.setBackground(new java.awt.Color(0, 0, 51));
-        jPanel11.setForeground(new java.awt.Color(0, 0, 51));
-
-        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel19.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Usuario en conecxión");
-
-        txtusu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtusuActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel19)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtusu, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(txtusu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        jPanel5.add(jPanel11);
-        jPanel11.setBounds(500, 600, 240, 40);
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/12345.png"))); // NOI18N
         jPanel5.add(jLabel1);
         jLabel1.setBounds(0, 0, 792, 660);
@@ -251,7 +213,7 @@ public class Administrador extends javax.swing.JFrame {
         lblNombre2.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre2.setText("Apellidos");
 
-        jTextField5.setText("$");
+        txtSalarioEmpleados.setText("$");
 
         lblTelefono2.setBackground(new java.awt.Color(255, 255, 255));
         lblTelefono2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -263,8 +225,8 @@ public class Administrador extends javax.swing.JFrame {
         lblTelefono3.setForeground(new java.awt.Color(255, 255, 255));
         lblTelefono3.setText(" # ");
 
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Encargado", "Vendedor", "Trabajador" }));
+        cmbCargoEmpleado.setForeground(new java.awt.Color(255, 255, 255));
+        cmbCargoEmpleado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Encargado", "Vendedor", "Trabajador" }));
 
         lblDomicilio3.setBackground(new java.awt.Color(255, 255, 255));
         lblDomicilio3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -286,27 +248,27 @@ public class Administrador extends javax.swing.JFrame {
         lblDomicilio6.setForeground(new java.awt.Color(255, 255, 255));
         lblDomicilio6.setText("Salario");
 
-        btnAddUser1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnAddUser1.setForeground(new java.awt.Color(0, 0, 102));
-        btnAddUser1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones png/AddUserBotton.png"))); // NOI18N
-        btnAddUser1.setToolTipText("");
-        btnAddUser1.setAlignmentY(0.0F);
-        btnAddUser1.setBorder(null);
-        btnAddUser1.setContentAreaFilled(false);
-        btnAddUser1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAddUser1.setDefaultCapable(false);
-        btnAddUser1.setFocusPainted(false);
-        btnAddUser1.setFocusable(false);
-        btnAddUser1.setIconTextGap(10);
-        btnAddUser1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones png/AddUserBottonPressed.png"))); // NOI18N
-        btnAddUser1.setRequestFocusEnabled(false);
-        btnAddUser1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/botones png/AddUserBottonSelected.png"))); // NOI18N
-        btnAddUser1.setVerifyInputWhenFocusTarget(false);
-        btnAddUser1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        btnAddUser1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnAddUser1.addActionListener(new java.awt.event.ActionListener() {
+        btnAddEmpleados.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnAddEmpleados.setForeground(new java.awt.Color(0, 0, 102));
+        btnAddEmpleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones png/AddUserBotton.png"))); // NOI18N
+        btnAddEmpleados.setToolTipText("");
+        btnAddEmpleados.setAlignmentY(0.0F);
+        btnAddEmpleados.setBorder(null);
+        btnAddEmpleados.setContentAreaFilled(false);
+        btnAddEmpleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddEmpleados.setDefaultCapable(false);
+        btnAddEmpleados.setFocusPainted(false);
+        btnAddEmpleados.setFocusable(false);
+        btnAddEmpleados.setIconTextGap(10);
+        btnAddEmpleados.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones png/AddUserBottonPressed.png"))); // NOI18N
+        btnAddEmpleados.setRequestFocusEnabled(false);
+        btnAddEmpleados.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/botones png/AddUserBottonSelected.png"))); // NOI18N
+        btnAddEmpleados.setVerifyInputWhenFocusTarget(false);
+        btnAddEmpleados.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        btnAddEmpleados.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnAddEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddUser1ActionPerformed(evt);
+                btnAddEmpleadosActionPerformed(evt);
             }
         });
 
@@ -323,11 +285,11 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(lblDomicilio4)
                         .addGap(4, 4, 4)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtTelefonoEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(lblDomicilio5)
                 .addGap(10, 10, 10)
-                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtMovilEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,10 +299,10 @@ public class Administrador extends javax.swing.JFrame {
                             .addComponent(lblDomicilio6)
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtSalarioEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAddUser1)
+                        .addComponent(btnAddEmpleados)
                         .addContainerGap())))
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -348,15 +310,15 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(lblNombre1)
                         .addGap(4, 4, 4)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(lblNombre2)
                         .addGap(4, 4, 4)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtApellidosEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(lblTipo1)
                         .addGap(10, 10, 10)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cmbCargoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
@@ -365,15 +327,15 @@ public class Administrador extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(lblTelefono)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCalleEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(4, 4, 4)
                         .addComponent(lblTelefono2)
                         .addGap(10, 10, 10)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtColoniaEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(lblTelefono3)
                         .addGap(10, 10, 10)
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNumEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -383,17 +345,17 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNombre1)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombreEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(lblNombre2))
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtApellidosEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(lblTipo1))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cmbCargoEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(6, 6, 6)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
@@ -401,11 +363,11 @@ public class Administrador extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTelefono)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCalleEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTelefono2)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtColoniaEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblTelefono3)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
@@ -416,13 +378,13 @@ public class Administrador extends javax.swing.JFrame {
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addComponent(lblDomicilio4))
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtTelefonoEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(lblDomicilio5))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtMovilEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,10 +392,10 @@ public class Administrador extends javax.swing.JFrame {
                                 .addGap(13, 13, 13)
                                 .addComponent(lblDomicilio6)
                                 .addGap(11, 11, 11)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtSalarioEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnAddUser1))))
+                        .addComponent(btnAddEmpleados))))
         );
 
         jPanel6.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, 270));
@@ -441,8 +403,8 @@ public class Administrador extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/e41a17bc530e920fe173955f5d5de442.png"))); // NOI18N
         jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 100, 130));
 
-        jTable1.setBackground(new java.awt.Color(0, 0, 102));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablaEmpleados.setBackground(new java.awt.Color(0, 0, 102));
+        TablaEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -453,19 +415,19 @@ public class Administrador extends javax.swing.JFrame {
                 "Nombre", "Apellidos", "Cargo", "Calle", "Colonia", "Num", "Telefono", "Movil", "Salario"
             }
         ));
-        jTable1.setGridColor(new java.awt.Color(0, 0, 51));
-        jTable1.setSelectionBackground(new java.awt.Color(0, 0, 51));
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setHeaderValue("Nombre");
-            jTable1.getColumnModel().getColumn(1).setHeaderValue("Apellidos");
-            jTable1.getColumnModel().getColumn(2).setHeaderValue("Cargo");
-            jTable1.getColumnModel().getColumn(3).setHeaderValue("Calle");
-            jTable1.getColumnModel().getColumn(4).setHeaderValue("Colonia");
-            jTable1.getColumnModel().getColumn(5).setHeaderValue("Num");
-            jTable1.getColumnModel().getColumn(6).setHeaderValue("Telefono");
-            jTable1.getColumnModel().getColumn(7).setHeaderValue("Movil");
-            jTable1.getColumnModel().getColumn(8).setHeaderValue("Salario");
+        TablaEmpleados.setGridColor(new java.awt.Color(0, 0, 51));
+        TablaEmpleados.setSelectionBackground(new java.awt.Color(0, 0, 51));
+        jScrollPane1.setViewportView(TablaEmpleados);
+        if (TablaEmpleados.getColumnModel().getColumnCount() > 0) {
+            TablaEmpleados.getColumnModel().getColumn(0).setHeaderValue("Nombre");
+            TablaEmpleados.getColumnModel().getColumn(1).setHeaderValue("Apellidos");
+            TablaEmpleados.getColumnModel().getColumn(2).setHeaderValue("Cargo");
+            TablaEmpleados.getColumnModel().getColumn(3).setHeaderValue("Calle");
+            TablaEmpleados.getColumnModel().getColumn(4).setHeaderValue("Colonia");
+            TablaEmpleados.getColumnModel().getColumn(5).setHeaderValue("Num");
+            TablaEmpleados.getColumnModel().getColumn(6).setHeaderValue("Telefono");
+            TablaEmpleados.getColumnModel().getColumn(7).setHeaderValue("Movil");
+            TablaEmpleados.getColumnModel().getColumn(8).setHeaderValue("Salario");
         }
 
         jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 650, 100));
@@ -826,9 +788,12 @@ public class Administrador extends javax.swing.JFrame {
        con.MostrarTabla(tablaUsuarios);
     }//GEN-LAST:event_btnAddUserActionPerformed
 
-    private void btnAddUser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddUser1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAddUser1ActionPerformed
+    private void btnAddEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddEmpleadosActionPerformed
+         ConsultasEmpleados cone= new   ConsultasEmpleados();
+        cone.insertar(txtNombreEmpleado.getText(),txtApellidosEmpleado.getText(),txtCalleEmpleado.getText(),txtColoniaEmpleado.getText(),
+        txtNumEmpleados.getText(),txtTelefonoEmpleados.getText(),txtMovilEmpleados.getText(),txtSalarioEmpleados.getText(),this.cmbCargoEmpleado.getSelectedItem().toString());
+       cone.MostrarTablaEmpleados(TablaEmpleados);
+    }//GEN-LAST:event_btnAddEmpleadosActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         // TODO add your handling code here:
@@ -837,10 +802,6 @@ public class Administrador extends javax.swing.JFrame {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarActionPerformed
-
-    private void txtusuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusuActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtusuActionPerformed
 
     private void txtConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfirmarActionPerformed
         // TODO add your handling code here:
@@ -883,14 +844,15 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TablaEmpleados;
     private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnAddEmpleados;
     private javax.swing.JButton btnAddUser;
-    private javax.swing.JButton btnAddUser1;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JComboBox<String> cmbCargoEmpleado;
     private javax.swing.JComboBox<String> cmbTipo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -901,7 +863,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -912,7 +873,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -930,20 +890,11 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane5;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel lblDomicilio;
     private javax.swing.JLabel lblDomicilio1;
     private javax.swing.JLabel lblDomicilio2;
@@ -965,10 +916,17 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JLabel lblTelefono3;
     private javax.swing.JLabel lblTipo1;
     private javax.swing.JTable tablaUsuarios;
+    private javax.swing.JTextField txtApellidosEmpleado;
+    private javax.swing.JTextField txtCalleEmpleado;
+    private javax.swing.JTextField txtColoniaEmpleado;
     private javax.swing.JPasswordField txtConfirmar;
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtMovilEmpleados;
+    private javax.swing.JTextField txtNombreEmpleado;
+    private javax.swing.JTextField txtNumEmpleados;
+    private javax.swing.JTextField txtSalarioEmpleados;
+    private javax.swing.JTextField txtTelefonoEmpleados;
     private javax.swing.JTextField txtUsuario;
-    private javax.swing.JTextField txtusu;
     // End of variables declaration//GEN-END:variables
 }

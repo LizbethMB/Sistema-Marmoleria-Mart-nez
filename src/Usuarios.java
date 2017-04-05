@@ -9,7 +9,7 @@
  * @author LIZBETHMB
  */
 public class Usuarios extends javax.swing.JFrame {
-////repositorio ejemplo
+    
     /**
      * Creates new form Usuarios
      */
