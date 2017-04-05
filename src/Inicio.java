@@ -1,5 +1,12 @@
 
-import java.awt.Container;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,9 +19,13 @@ import java.awt.Container;
  * @author LIZBETHMB
  */
 public class Inicio extends javax.swing.JFrame {
-
-    public Inicio() {
-        initComponents();
+    
+    
+    
+    public Inicio(){
+          
+   
+     initComponents();
     
     }
 
@@ -29,19 +40,19 @@ public class Inicio extends javax.swing.JFrame {
 
         jMenu1 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
-        btnAceptar = new javax.swing.JButton();
+        btnAceptarLogin = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtUsuarioLogin = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        txtContraseñaLogin = new javax.swing.JPasswordField();
 
         jMenu1.setText("jMenu1");
 
@@ -52,26 +63,26 @@ public class Inicio extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(0, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnAceptar.setForeground(new java.awt.Color(255, 255, 255));
-        btnAceptar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones png/Aceptar Normal.png"))); // NOI18N
-        btnAceptar.setToolTipText("");
-        btnAceptar.setBorder(null);
-        btnAceptar.setBorderPainted(false);
-        btnAceptar.setContentAreaFilled(false);
-        btnAceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnAceptar.setDefaultCapable(false);
-        btnAceptar.setFocusPainted(false);
-        btnAceptar.setFocusable(false);
-        btnAceptar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones png/Aceptar pressed.png"))); // NOI18N
-        btnAceptar.setRequestFocusEnabled(false);
-        btnAceptar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/botones png/Aceptar Selected.png"))); // NOI18N
-        btnAceptar.setVerifyInputWhenFocusTarget(false);
-        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+        btnAceptarLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnAceptarLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botones png/Aceptar Normal.png"))); // NOI18N
+        btnAceptarLogin.setToolTipText("");
+        btnAceptarLogin.setBorder(null);
+        btnAceptarLogin.setBorderPainted(false);
+        btnAceptarLogin.setContentAreaFilled(false);
+        btnAceptarLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAceptarLogin.setDefaultCapable(false);
+        btnAceptarLogin.setFocusPainted(false);
+        btnAceptarLogin.setFocusable(false);
+        btnAceptarLogin.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botones png/Aceptar pressed.png"))); // NOI18N
+        btnAceptarLogin.setRequestFocusEnabled(false);
+        btnAceptarLogin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/botones png/Aceptar Selected.png"))); // NOI18N
+        btnAceptarLogin.setVerifyInputWhenFocusTarget(false);
+        btnAceptarLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAceptarActionPerformed(evt);
+                btnAceptarLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, -1, -1));
+        jPanel1.add(btnAceptarLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(204, 0, 204));
         jPanel3.setForeground(new java.awt.Color(153, 0, 153));
@@ -101,7 +112,7 @@ public class Inicio extends javax.swing.JFrame {
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 500));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 150, 30));
+        jPanel1.add(txtUsuarioLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 150, 30));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 51));
         jLabel4.setFont(new java.awt.Font("Freestyle Script", 1, 36)); // NOI18N
@@ -111,7 +122,6 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mas/UserBoton.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 40, 50));
-        jPanel1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 150, 30));
 
         jLabel7.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,15 +135,65 @@ public class Inicio extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Usuario");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, -1, -1));
+        jPanel1.add(txtContraseñaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 150, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAceptarActionPerformed
+  
+    void Ingresar(String usuario,String contraseña) throws SQLException{
+    
+    String cap="";
+     Connection cn=(new ConexionDB()).conectar();
+       if(cn!=null){
+           
+       Statement stmt=cn.createStatement();
+    String sql="SELECT * FROM Usuarios WHERE usuario='"+usuario+"' && contraseña='"+contraseña+"'";
+    try {
+    
+    ResultSet rs= stmt.executeQuery(sql);
+    while(rs.next())
+    {
+       cap=rs.getString("Tipo");
+    }
+    if(cap.equals("Administrador"))
+    {     
+       this.setVisible(false);
+       Administrador admin = new Administrador(); 
+       admin.setVisible(true);
+       admin.pack();
+    
+    }//if
+    
+    if(cap.equals("Vendedor"))
+    {
+        this.setVisible(false);
+       Vendedor ven = new Vendedor(); 
+       ven.setVisible(true);
+       ven.pack();  
+    }
+    
+    if((!cap.equals("Administrador"))&&(!cap.equals("Vendedor"))){
+     JOptionPane.showMessageDialog(null,"No existen tus datos");
+    }
+    
+    }catch(SQLException ex){
+        Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+    }
+       }
+  }
+  
+    private void btnAceptarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarLoginActionPerformed
+     String usuario=txtUsuarioLogin.getText();
+     String contraseña=new String (txtContraseñaLogin.getPassword());
+        try {
+            Ingresar(usuario,contraseña);
+        } catch (SQLException ex) {
+            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+    }//GEN-LAST:event_btnAceptarLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,13 +225,16 @@ public class Inicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Inicio().setVisible(true);
-            }
+         
+                    new Inicio().setVisible(true);
+                
+                }
+            
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnAceptarLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -184,7 +247,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField txtContraseñaLogin;
+    private javax.swing.JTextField txtUsuarioLogin;
     // End of variables declaration//GEN-END:variables
 }

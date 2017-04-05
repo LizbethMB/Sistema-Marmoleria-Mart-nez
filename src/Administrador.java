@@ -13,18 +13,20 @@ import static javax.swing.JOptionPane.showMessageDialog;
  *
  * @author LIZBETHMB
  */
-public class pRUEBA extends javax.swing.JFrame {
+public class Administrador extends javax.swing.JFrame {
 
     /**
-     * Creates new form pRUEBA
+     * Creates new form Administrador
      */
     ConsultasUsuarios cu;
-    public pRUEBA() {
+    
+    public Administrador() {
         initComponents();
         
         //Consultas Usuarios
         cu= new ConsultasUsuarios();
-        
+            ConsultasUsuarios con= new ConsultasUsuarios();
+        con.MostrarTabla(tablaUsuarios);
     }
 
     /**
@@ -43,6 +45,9 @@ public class pRUEBA extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        txtusu = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -79,16 +84,18 @@ public class pRUEBA extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         lblNombre = new javax.swing.JLabel();
         lblDomicilio = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
         lblDomicilio2 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
         btnAddUser = new javax.swing.JButton();
         lblDomicilio7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        lblDomicilio8 = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
+        cmbTipo = new javax.swing.JComboBox<>();
+        txtConfirmar = new javax.swing.JPasswordField();
+        txtContraseña = new javax.swing.JPasswordField();
         jLabel12 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tablaUsuarios = new javax.swing.JTable();
         jLabel14 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -167,6 +174,44 @@ public class pRUEBA extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/TITULOINVENTARIO.png"))); // NOI18N
         jPanel5.add(jLabel8);
         jLabel8.setBounds(-20, 0, 280, 77);
+
+        jPanel11.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel11.setForeground(new java.awt.Color(0, 0, 51));
+
+        jLabel19.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel19.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Usuario en conecxión");
+
+        txtusu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtusuActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtusu, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(txtusu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jPanel5.add(jPanel11);
+        jPanel11.setBounds(500, 600, 240, 40);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/12345.png"))); // NOI18N
         jPanel5.add(jLabel1);
@@ -439,34 +484,26 @@ public class pRUEBA extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(0, 0, 51));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nuevo Usuario", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(null);
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblNombre.setBackground(new java.awt.Color(255, 255, 255));
         lblNombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setText("Usuario");
-        jPanel4.add(lblNombre);
-        lblNombre.setBounds(16, 36, 45, 15);
+        jPanel4.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         lblDomicilio.setBackground(new java.awt.Color(255, 255, 255));
         lblDomicilio.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblDomicilio.setForeground(new java.awt.Color(255, 255, 255));
         lblDomicilio.setText("Contraseña");
-        jPanel4.add(lblDomicilio);
-        lblDomicilio.setBounds(16, 82, 70, 15);
-        jPanel4.add(jTextField3);
-        jTextField3.setBounds(394, 30, 136, 28);
-        jPanel4.add(jTextField12);
-        jTextField12.setBounds(104, 76, 150, 28);
+        jPanel4.add(lblDomicilio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        jPanel4.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 150, 28));
 
         lblDomicilio2.setBackground(new java.awt.Color(255, 255, 255));
         lblDomicilio2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblDomicilio2.setForeground(new java.awt.Color(255, 255, 255));
-        lblDomicilio2.setText("Confirmar");
-        jPanel4.add(lblDomicilio2);
-        lblDomicilio2.setBounds(16, 128, 60, 15);
-        jPanel4.add(jTextField13);
-        jTextField13.setBounds(104, 122, 150, 28);
+        lblDomicilio2.setText("Tipo");
+        jPanel4.add(lblDomicilio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, -1, -1));
 
         btnAddUser.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         btnAddUser.setForeground(new java.awt.Color(0, 0, 102));
@@ -491,45 +528,67 @@ public class pRUEBA extends javax.swing.JFrame {
                 btnAddUserActionPerformed(evt);
             }
         });
-        jPanel4.add(btnAddUser);
-        btnAddUser.setBounds(280, 120, 35, 36);
+        jPanel4.add(btnAddUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 150, -1, -1));
 
         lblDomicilio7.setBackground(new java.awt.Color(255, 255, 255));
         lblDomicilio7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblDomicilio7.setForeground(new java.awt.Color(255, 255, 255));
-        lblDomicilio7.setText("ID");
-        jPanel4.add(lblDomicilio7);
-        lblDomicilio7.setBounds(310, 36, 74, 15);
-        jPanel4.add(jTextField6);
-        jTextField6.setBounds(104, 30, 150, 28);
+        lblDomicilio7.setText("ID_Empleado");
+        jPanel4.add(lblDomicilio7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 110, -1));
+
+        lblDomicilio8.setBackground(new java.awt.Color(255, 255, 255));
+        lblDomicilio8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblDomicilio8.setForeground(new java.awt.Color(255, 255, 255));
+        lblDomicilio8.setText("Confirmar");
+        jPanel4.add(lblDomicilio8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, -1, -1));
+        jPanel4.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 150, 28));
+
+        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Vendedor" }));
+        jPanel4.add(cmbTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
+
+        txtConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtConfirmarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(txtConfirmar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 150, 150, 30));
+        jPanel4.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 150, 30));
 
         jPanel1.add(jPanel4);
-        jPanel4.setBounds(120, 350, 560, 190);
+        jPanel4.setBounds(100, 350, 580, 200);
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/e41a17bc530e920fe173955f5d5de442.png"))); // NOI18N
         jPanel1.add(jLabel12);
         jLabel12.setBounds(690, 0, 100, 130);
 
-        jTable2.setAutoCreateRowSorter(true);
-        jTable2.setBackground(new java.awt.Color(0, 0, 102));
-        jTable2.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        jTable2.setForeground(new java.awt.Color(255, 255, 255));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaUsuarios.setAutoCreateRowSorter(true);
+        tablaUsuarios.setBackground(new java.awt.Color(0, 0, 102));
+        tablaUsuarios.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        tablaUsuarios.setForeground(new java.awt.Color(255, 255, 255));
+        tablaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Tipo", "Eliminar"
+                "ID", "Usuario", "Nombre", "Apellidos", "Tipo"
             }
-        ));
-        jTable2.setGridColor(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setViewportView(jTable2);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaUsuarios.setGridColor(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setViewportView(tablaUsuarios);
 
         jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(240, 190, 300, 120);
+        jScrollPane2.setBounds(200, 170, 370, 120);
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/TITULOUSUARIOS.png"))); // NOI18N
         jPanel1.add(jLabel14);
@@ -762,7 +821,9 @@ public class pRUEBA extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddUserActionPerformed
-        // TODO add your handling code here:
+          ConsultasUsuarios con= new   ConsultasUsuarios ();
+        con.insertar(txtId.getText(), txtUsuario.getText(), txtContraseña.getText(),this.cmbTipo.getSelectedItem().toString(),txtContraseña.getText());
+       con.MostrarTabla(tablaUsuarios);
     }//GEN-LAST:event_btnAddUserActionPerformed
 
     private void btnAddUser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddUser1ActionPerformed
@@ -776,6 +837,14 @@ public class pRUEBA extends javax.swing.JFrame {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void txtusuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtusuActionPerformed
+
+    private void txtConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfirmarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -794,20 +863,21 @@ public class pRUEBA extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(pRUEBA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(pRUEBA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(pRUEBA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(pRUEBA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new pRUEBA().setVisible(true);
+                new Administrador().setVisible(true);
             }
         });
     }
@@ -817,6 +887,7 @@ public class pRUEBA extends javax.swing.JFrame {
     private javax.swing.JButton btnAddUser;
     private javax.swing.JButton btnAddUser1;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JComboBox<String> cmbTipo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -830,6 +901,7 @@ public class pRUEBA extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -840,6 +912,7 @@ public class pRUEBA extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -858,21 +931,16 @@ public class pRUEBA extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
@@ -884,6 +952,7 @@ public class pRUEBA extends javax.swing.JFrame {
     private javax.swing.JLabel lblDomicilio5;
     private javax.swing.JLabel lblDomicilio6;
     private javax.swing.JLabel lblDomicilio7;
+    private javax.swing.JLabel lblDomicilio8;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNombre1;
     private javax.swing.JLabel lblNombre2;
@@ -895,5 +964,11 @@ public class pRUEBA extends javax.swing.JFrame {
     private javax.swing.JLabel lblTelefono2;
     private javax.swing.JLabel lblTelefono3;
     private javax.swing.JLabel lblTipo1;
+    private javax.swing.JTable tablaUsuarios;
+    private javax.swing.JPasswordField txtConfirmar;
+    private javax.swing.JPasswordField txtContraseña;
+    private javax.swing.JTextField txtId;
+    private javax.swing.JTextField txtUsuario;
+    private javax.swing.JTextField txtusu;
     // End of variables declaration//GEN-END:variables
 }
