@@ -5,6 +5,16 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.Vector;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -81,5 +91,22 @@ public class ConsultasEmpleados {
             }
         }
     }
+     
+     public int eliminarempleados(String id_emp){
+     int filas = 0;
+        try {
+            //Connection con = cn.conectar();
+            Statement sql = cn.createStatement();
+            filas = sql.executeUpdate("delete from Empleados where ID_EMP = "+id_emp+"");
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error! El empleado es un usuario del sistema.\n¡No se puede eliminar!");
+        }
+
+        return filas;
+    
+    }
+
+
       
 }

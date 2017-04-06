@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,12 +21,13 @@ import javax.swing.JOptionPane;
  */
 public class Inicio extends javax.swing.JFrame {
     
-    
+     ConsultasLogin cl;
     
     public Inicio(){
           
-   
-     initComponents();
+    initComponents();
+     //Consultas Login
+      cl = new ConsultasLogin();
     
     }
 
@@ -112,6 +114,12 @@ public class Inicio extends javax.swing.JFrame {
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 500));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        txtUsuarioLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioLoginActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtUsuarioLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 150, 30));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 51));
@@ -141,59 +149,14 @@ public class Inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-  
-    void Ingresar(String usuario,String contraseña) throws SQLException{
-    
-    String cap="";
-     Connection cn=(new ConexionDB()).conectar();
-       if(cn!=null){
-           
-       Statement stmt=cn.createStatement();
-    String sql="SELECT * FROM Usuarios WHERE usuario='"+usuario+"' && contraseña='"+contraseña+"'";
-    try {
-    
-    ResultSet rs= stmt.executeQuery(sql);
-    while(rs.next())
-    {
-       cap=rs.getString("Tipo");
-    }
-    if(cap.equals("Administrador"))
-    {     
-       this.setVisible(false);
-       Administrador admin = new Administrador(); 
-       admin.setVisible(true);
-       admin.pack();
-    
-    }//if
-    
-    if(cap.equals("Vendedor"))
-    {
-        this.setVisible(false);
-       Vendedor ven = new Vendedor(); 
-       ven.setVisible(true);
-       ven.pack();  
-    }
-    
-    if((!cap.equals("Administrador"))&&(!cap.equals("Vendedor"))){
-     JOptionPane.showMessageDialog(null,"No existen tus datos");
-    }
-    
-    }catch(SQLException ex){
-        Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
-    }
-       }
-  }
-  
+   
     private void btnAceptarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarLoginActionPerformed
-     String usuario=txtUsuarioLogin.getText();
-     String contraseña=new String (txtContraseñaLogin.getPassword());
-        try {
-            Ingresar(usuario,contraseña);
-        } catch (SQLException ex) {
-            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
+     cl.inicio(txtUsuarioLogin.getText(), txtContraseñaLogin.getText(),this);
     }//GEN-LAST:event_btnAceptarLoginActionPerformed
+
+    private void txtUsuarioLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioLoginActionPerformed
 
     /**
      * @param args the command line arguments

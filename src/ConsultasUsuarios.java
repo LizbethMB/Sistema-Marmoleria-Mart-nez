@@ -46,7 +46,6 @@ public class ConsultasUsuarios {
                 showMessageDialog(null, "Error: "+e.getMessage(),"Error", JOptionPane.ERROR_MESSAGE);
             }
         
-        
     }
     
   public void MostrarTabla(JTable table){
