@@ -213,12 +213,35 @@ public class Administrador extends javax.swing.JFrame {
         lblNombre2.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre2.setText("Apellidos");
 
+        txtNombreEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreEmpleadoKeyTyped(evt);
+            }
+        });
+
+        txtApellidosEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidosEmpleadoKeyTyped(evt);
+            }
+        });
+
         txtSalarioEmpleados.setText("$");
 
         lblTelefono2.setBackground(new java.awt.Color(255, 255, 255));
         lblTelefono2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblTelefono2.setForeground(new java.awt.Color(255, 255, 255));
         lblTelefono2.setText("Colonia");
+
+        txtColoniaEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtColoniaEmpleadoActionPerformed(evt);
+            }
+        });
+        txtColoniaEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtColoniaEmpleadoKeyTyped(evt);
+            }
+        });
 
         lblTelefono3.setBackground(new java.awt.Color(255, 255, 255));
         lblTelefono3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -232,6 +255,12 @@ public class Administrador extends javax.swing.JFrame {
         lblDomicilio3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblDomicilio3.setForeground(new java.awt.Color(255, 255, 255));
         lblDomicilio3.setText("Domicilio");
+
+        txtCalleEmpleado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCalleEmpleadoKeyTyped(evt);
+            }
+        });
 
         lblDomicilio4.setBackground(new java.awt.Color(255, 255, 255));
         lblDomicilio4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -404,33 +433,23 @@ public class Administrador extends javax.swing.JFrame {
         jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 100, 130));
 
         TablaEmpleados.setBackground(new java.awt.Color(0, 0, 102));
+        TablaEmpleados.setForeground(new java.awt.Color(255, 255, 255));
         TablaEmpleados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nombre", "Apellidos", "Cargo", "Calle", "Colonia", "Num", "Telefono", "Movil", "Salario"
+                "", "", "", "", "", "", "", "", "", ""
             }
         ));
         TablaEmpleados.setGridColor(new java.awt.Color(0, 0, 51));
         TablaEmpleados.setSelectionBackground(new java.awt.Color(0, 0, 51));
         jScrollPane1.setViewportView(TablaEmpleados);
-        if (TablaEmpleados.getColumnModel().getColumnCount() > 0) {
-            TablaEmpleados.getColumnModel().getColumn(0).setHeaderValue("Nombre");
-            TablaEmpleados.getColumnModel().getColumn(1).setHeaderValue("Apellidos");
-            TablaEmpleados.getColumnModel().getColumn(2).setHeaderValue("Cargo");
-            TablaEmpleados.getColumnModel().getColumn(3).setHeaderValue("Calle");
-            TablaEmpleados.getColumnModel().getColumn(4).setHeaderValue("Colonia");
-            TablaEmpleados.getColumnModel().getColumn(5).setHeaderValue("Num");
-            TablaEmpleados.getColumnModel().getColumn(6).setHeaderValue("Telefono");
-            TablaEmpleados.getColumnModel().getColumn(7).setHeaderValue("Movil");
-            TablaEmpleados.getColumnModel().getColumn(8).setHeaderValue("Salario");
-        }
 
-        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 650, 100));
+        jPanel6.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 730, 100));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/TITULOEMPLEADOS.png"))); // NOI18N
         jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, -1, -1));
@@ -550,7 +569,7 @@ public class Administrador extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tablaUsuarios);
 
         jPanel1.add(jScrollPane2);
-        jScrollPane2.setBounds(200, 170, 370, 120);
+        jScrollPane2.setBounds(100, 180, 590, 120);
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/TITULOUSUARIOS.png"))); // NOI18N
         jPanel1.add(jLabel14);
@@ -789,10 +808,19 @@ public class Administrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddUserActionPerformed
 
     private void btnAddEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddEmpleadosActionPerformed
-         ConsultasEmpleados cone= new   ConsultasEmpleados();
-        cone.insertar(txtNombreEmpleado.getText(),txtApellidosEmpleado.getText(),txtCalleEmpleado.getText(),txtColoniaEmpleado.getText(),
-        txtNumEmpleados.getText(),txtTelefonoEmpleados.getText(),txtMovilEmpleados.getText(),txtSalarioEmpleados.getText(),this.cmbCargoEmpleado.getSelectedItem().toString());
-       cone.MostrarTablaEmpleados(TablaEmpleados);
+     ConsultasEmpleados cone= new   ConsultasEmpleados();
+     cone.insertar(txtNombreEmpleado.getText(),txtApellidosEmpleado.getText(),txtCalleEmpleado.getText(),txtColoniaEmpleado.getText(),
+     txtNumEmpleados.getText(),txtTelefonoEmpleados.getText(),txtMovilEmpleados.getText(),txtSalarioEmpleados.getText(),this.cmbCargoEmpleado.getSelectedItem().toString());
+     cone.MostrarTablaEmpleados(TablaEmpleados);
+       
+      txtNombreEmpleado.setText("");
+      txtApellidosEmpleado.setText("");
+      txtCalleEmpleado.setText("");
+      txtColoniaEmpleado.setText("");
+      txtNumEmpleados.setText("");
+      txtTelefonoEmpleados.setText("");
+      txtMovilEmpleados.setText("");
+      txtSalarioEmpleados.setText("");
     }//GEN-LAST:event_btnAddEmpleadosActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
@@ -806,6 +834,47 @@ public class Administrador extends javax.swing.JFrame {
     private void txtConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfirmarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtConfirmarActionPerformed
+
+    private void txtNombreEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreEmpleadoKeyTyped
+     String mayus=txtNombreEmpleado.getText();
+     if(mayus.length()>0){ //si es mayor a 0 es que ya se esta escribiendo
+      char letraprimera=mayus.charAt(0); //obtine la primera letra
+      mayus=Character.toUpperCase(letraprimera)+mayus.substring(1,mayus.length());
+       txtNombreEmpleado.setText(mayus);
+            
+     }
+    }//GEN-LAST:event_txtNombreEmpleadoKeyTyped
+
+    private void txtApellidosEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosEmpleadoKeyTyped
+      String mayus=txtApellidosEmpleado.getText();
+      if(mayus.length()>0){ //si es mayor a 0 es que ya se esta escribiendo
+      char letraprimera=mayus.charAt(0); //obtine la primera letra
+      mayus=Character.toUpperCase(letraprimera)+mayus.substring(1,mayus.length());
+      txtApellidosEmpleado.setText(mayus);
+      }
+    }//GEN-LAST:event_txtApellidosEmpleadoKeyTyped
+
+    private void txtCalleEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCalleEmpleadoKeyTyped
+      String mayus=txtCalleEmpleado.getText();
+      if(mayus.length()>0){ //si es mayor a 0 es que ya se esta escribiendo
+      char letraprimera=mayus.charAt(0); //obtine la primera letra
+      mayus=Character.toUpperCase(letraprimera)+mayus.substring(1,mayus.length());
+      txtCalleEmpleado.setText(mayus);
+      }
+    }//GEN-LAST:event_txtCalleEmpleadoKeyTyped
+
+    private void txtColoniaEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColoniaEmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtColoniaEmpleadoActionPerformed
+
+    private void txtColoniaEmpleadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtColoniaEmpleadoKeyTyped
+      String mayus=txtColoniaEmpleado.getText();
+      if(mayus.length()>0){ //si es mayor a 0 es que ya se esta escribiendo
+      char letraprimera=mayus.charAt(0); //obtine la primera letra
+      mayus=Character.toUpperCase(letraprimera)+mayus.substring(1,mayus.length());
+      txtColoniaEmpleado.setText(mayus);
+      }
+    }//GEN-LAST:event_txtColoniaEmpleadoKeyTyped
 
     /**
      * @param args the command line arguments
